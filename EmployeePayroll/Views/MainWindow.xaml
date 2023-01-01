@@ -1,0 +1,150 @@
+﻿<Window x:Class="EmployeePayroll.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeePayroll"
+        mc:Ignorable="d"
+        Title="Employee Payroll" Height="450" Width="800">
+    <Grid Margin="0,0,0,-6" RenderTransformOrigin="0.623,0.494">
+        <Label Content="Name" HorizontalAlignment="Left" Height="28" Margin="160,77,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Profile" HorizontalAlignment="Left" Height="28" Margin="160,117,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Gender" HorizontalAlignment="Left" Height="28" Margin="160,156,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Department" HorizontalAlignment="Left" Height="28" Margin="160,193,0,0" VerticalAlignment="Top" Width="76"/>
+        <Label Content="Salary" HorizontalAlignment="Left" Height="28" Margin="160,230,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Start Date" HorizontalAlignment="Left" Height="28" Margin="159,267,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label Content="Notes" HorizontalAlignment="Left" Height="28" Margin="160,308,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Employee Payroll Form" HorizontalAlignment="Left" Height="32" Margin="160,30,0,0" VerticalAlignment="Top" Width="231" FontWeight="Bold" FontSize="20" Background="#00000000" Foreground="#FF595656" FontFamily="Calibri"/>
+        <TextBox x:Name="name_txt" HorizontalAlignment="Left" Height="28" Margin="257,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" RenderTransformOrigin="0.5,0.5" Foreground="#FF080808">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <RadioButton x:Name="a_radio" Content="../Image/Ellipse -1.png" HorizontalAlignment="Left" Height="14" Margin="257,127,0,0" VerticalAlignment="Top" Width="17" Background="#FFDDD6D6" Checked="radio_Checked"/>
+        <RadioButton x:Name="b_radio" Content="../Image/Ellipse -2.png" HorizontalAlignment="Left" Height="14" Margin="322,126,0,0" VerticalAlignment="Top" Width="17" Background="#FFDDD6D6" Checked="radio_Checked"/>
+        <RadioButton x:Name="c_radio" Content="../Image/Ellipse -3.png" HorizontalAlignment="Left" Height="14" Margin="385,126,0,0" VerticalAlignment="Top" Width="17" Background="#FFDDD6D6" Checked="radio_Checked"/>
+        <RadioButton x:Name="d_radio" Content="../Image/Ellipse -4.png" HorizontalAlignment="Left" Height="14" Margin="451,126,0,0" VerticalAlignment="Top" Width="18" Background="#FFDDD6D6" Checked="radio_Checked"/>
+        <Slider x:Name="slValue" HorizontalAlignment="Center" Height="23" Margin="0,235,0,0" VerticalAlignment="Top" Width="283" Maximum="5000000" TickFrequency="100000" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="note_txt" HorizontalAlignment="Left" Height="57" Margin="259,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" RenderTransformOrigin="0.5,0.5" Foreground="#FF050505">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button x:Name="submit" Content="Submit" HorizontalAlignment="Left" Height="32" Margin="432,384,0,0" VerticalAlignment="Top" Width="100" Click="Submit_Click"/>
+        <Button x:Name="reset" Content="Reset" HorizontalAlignment="Left" Height="32" Margin="578,384,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="1.163,0.47" Click="Reset_Click"/>
+        <Button x:Name="cancel" Content="Cancel" HorizontalAlignment="Left" Height="32" Margin="164,384,0,0" VerticalAlignment="Top" Width="102" Click="cancel_Click"/>
+        <TextBox x:Name="sliderValue" HorizontalAlignment="Left" Height="23" Margin="555,235,0,0" TextWrapping="Wrap" Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="76" FontWeight="Bold" FontFamily="Calibri" FontSize="15" DockPanel.Dock="Right"/>
+        <ComboBox x:Name="date_combo" HorizontalAlignment="Left" Height="28" Margin="257,267,0,0" VerticalAlignment="Top" Width="51">
+            <ComboBoxItem Content="1"></ComboBoxItem>
+            <ComboBoxItem Content="2"></ComboBoxItem>
+            <ComboBoxItem Content="3"></ComboBoxItem>
+            <ComboBoxItem Content="4"></ComboBoxItem>
+            <ComboBoxItem Content="5"></ComboBoxItem>
+            <ComboBoxItem Content="6"></ComboBoxItem>
+            <ComboBoxItem Content="7"></ComboBoxItem>
+            <ComboBoxItem Content="8"></ComboBoxItem>
+            <ComboBoxItem Content="9"></ComboBoxItem>
+            <ComboBoxItem Content="10"></ComboBoxItem>
+            <ComboBoxItem Content="11"></ComboBoxItem>
+            <ComboBoxItem Content="12"></ComboBoxItem>
+            <ComboBoxItem Content="13"></ComboBoxItem>
+            <ComboBoxItem Content="14"></ComboBoxItem>
+            <ComboBoxItem Content="15"></ComboBoxItem>
+            <ComboBoxItem Content="16"></ComboBoxItem>
+            <ComboBoxItem Content="17"></ComboBoxItem>
+            <ComboBoxItem Content="18"></ComboBoxItem>
+            <ComboBoxItem Content="19"></ComboBoxItem>
+            <ComboBoxItem Content="20"></ComboBoxItem>
+            <ComboBoxItem Content="21"></ComboBoxItem>
+            <ComboBoxItem Content="22"></ComboBoxItem>
+            <ComboBoxItem Content="23"></ComboBoxItem>
+            <ComboBoxItem Content="24"></ComboBoxItem>
+            <ComboBoxItem Content="25"></ComboBoxItem>
+            <ComboBoxItem Content="26"></ComboBoxItem>
+            <ComboBoxItem Content="27"></ComboBoxItem>
+            <ComboBoxItem Content="28"></ComboBoxItem>
+            <ComboBoxItem Content="29"></ComboBoxItem>
+            <ComboBoxItem Content="30"></ComboBoxItem>
+            <ComboBoxItem Content="31"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="month_combo" HorizontalAlignment="Left" Height="28" Margin="334,267,0,0" VerticalAlignment="Top" Width="88">
+            <ComboBoxItem Content="January"></ComboBoxItem>
+            <ComboBoxItem Content="February"></ComboBoxItem>
+            <ComboBoxItem Content="March"></ComboBoxItem>
+            <ComboBoxItem Content="April"></ComboBoxItem>
+            <ComboBoxItem Content="May"></ComboBoxItem>
+            <ComboBoxItem Content="June"></ComboBoxItem>
+            <ComboBoxItem Content="Jully"></ComboBoxItem>
+            <ComboBoxItem Content="August"></ComboBoxItem>
+            <ComboBoxItem Content="September"></ComboBoxItem>
+            <ComboBoxItem Content="October"></ComboBoxItem>
+            <ComboBoxItem Content="November"></ComboBoxItem>
+            <ComboBoxItem Content="December"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="year_combo" HorizontalAlignment="Left" Height="28" Margin="450,267,0,0" VerticalAlignment="Top" Width="88">
+            <ComboBoxItem Content="2022"></ComboBoxItem>
+            <ComboBoxItem Content="2023"></ComboBoxItem>
+            <ComboBoxItem Content="2024"></ComboBoxItem>
+            <ComboBoxItem Content="2025"></ComboBoxItem>
+            <ComboBoxItem Content="2026"></ComboBoxItem>
+            <ComboBoxItem Content="2027"></ComboBoxItem>
+            <ComboBoxItem Content="2028"></ComboBoxItem>
+            <ComboBoxItem Content="2029"></ComboBoxItem>
+            <ComboBoxItem Content="2030"></ComboBoxItem>
+            <ComboBoxItem Content="2031"></ComboBoxItem>
+            <ComboBoxItem Content="2032"></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="genderMenu" HorizontalAlignment="Left" Height="28" Margin="257,157,0,0" VerticalAlignment="Top" Width="90">
+            <ComboBoxItem Content="Male"></ComboBoxItem>
+            <ComboBoxItem Content="Female"></ComboBoxItem>
+        </ComboBox>
+        <ListBox x:Name="listOption" BorderThickness="0" HorizontalAlignment="Left" Height="28" Margin="259,193,0,0" VerticalAlignment="Top" Width="338" Visibility="Visible">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation='Horizontal'/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <CheckBox x:Name="hr_chk" Content="HR"></CheckBox>
+            <CheckBox x:Name="sales_chk" Content="Sales"></CheckBox>
+            <CheckBox x:Name="fin_chk" Content="Finance"></CheckBox>
+            <CheckBox x:Name="eng_chk" Content="Engineer"></CheckBox>
+            <CheckBox x:Name="other_chk" Content="Other"></CheckBox>
+        </ListBox>
+        <Image HorizontalAlignment="Left" Height="39" Margin="278,114,0,0" VerticalAlignment="Top" Width="38">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/Ellipse -1.png" />
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="39" Margin="341,114,0,0" VerticalAlignment="Top" Width="38">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/Ellipse -2.png" />
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="39" Margin="405,114,0,0" VerticalAlignment="Top" Width="38">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/Ellipse -3.png" />
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="39" Margin="471,114,0,0" VerticalAlignment="Top" Width="38">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/Ellipse -4.png" />
+            </Image.Source>
+        </Image>
+        <Image HorizontalAlignment="Left" Height="50" Margin="18,0,0,0" VerticalAlignment="Top" Width="137">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/pro.png" />
+            </Image.Source>
+        </Image>
+
+    </Grid>
+</Window>

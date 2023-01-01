@@ -1,0 +1,103 @@
+﻿<Window x:Class="EmployeePayroll.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmployeePayroll"
+        mc:Ignorable="d"
+        Title="Dashboard" Height="450" Width="800" Background="White"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+   
+    <Window.Resources>
+        <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True"/>
+                            <Polygon x:Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="8,8,3,3" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" TargetName="Arrow" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFF6F6F6">
+        <Label Content="Employee Details" HorizontalAlignment="Left" Height="34" Margin="38,65,0,0" VerticalAlignment="Top" Width="153" FontWeight="Bold" FontFamily="Calibri" FontSize="20" Foreground="#FF355B98"/>
+        <Button Content="Add User" HorizontalAlignment="Left" Height="34" Margin="648,69,0,0" VerticalAlignment="Top" Width="113" BorderBrush="#FF93EE3E" Background="#FFA4DF47" FontWeight="Bold" FontFamily="Calibri" FontSize="20" Click="AddUser"/>
+        <Grid HorizontalAlignment="Center" Height="56" VerticalAlignment="Top" Width="800" Background="White"/>
+        <Image HorizontalAlignment="Left" Height="50" Margin="38,6,0,0" VerticalAlignment="Top" Width="128">
+            <Image.Source>
+                <BitmapImage DecodePixelWidth="300" UriSource="../Image/pro.png" />
+            </Image.Source>
+        </Image>
+        <DataGrid x:Name="datagrid" Margin="27,121,39,21" Padding="0" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding employeeCollection, UpdateSourceTrigger=PropertyChanged}" BorderThickness="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id" Header="ID"
+                                    Visibility="Hidden"
+                                    Binding="{Binding EmpID}"/>
+                <DataGridTemplateColumn Header=" " Width="*"
+                                        MinWidth="50"
+                                        IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Profile}" Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Name"
+                                    MinWidth="150"
+                                    Width="10"
+                                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Gender"
+                                    MinWidth="150"
+                                    Width="10" Binding="{Binding Gender}"/>
+                <DataGridTextColumn Header="Department"
+                                    MinWidth="150"
+                                    Width="*" Binding="{Binding Dept}"/>
+                <DataGridTextColumn Header="Salary"
+                                    MinWidth="150"
+                                    Width="*" Binding="{Binding Salary}"/>
+                <DataGridTextColumn Header="Start Date"
+                                    MinWidth="150"
+                                    Width="*" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Note"
+                                    MinWidth="150"
+                                    Width="*" Binding="{Binding Note}"/>
+                <DataGridTemplateColumn Header="Action" MinWidth="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="White" BorderThickness="0" Click="DeleteEvent">
+                                <Image Source="../Image/Delete.png" Height="25" Width="20"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn MinWidth="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="White" BorderThickness="0" Click="EditEvent">
+                                <Image Source="../Image/Edit.png" Width="25" Height="20"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+    </Grid>
+</Window>
